@@ -7,73 +7,83 @@ fun main() {
     println("Example Array 1")
     val exam1: Array<Int> = arrayOf(1, 2, 3, 4, 5)
     println(exam1.joinToString())
+
 //    Создайте пустой массив строк размером 10 элементов.
     println("Example Array 2")
     val exam2: Array<String> = Array(10) { "" }
     println(exam2.joinToString())
+
 //    Создайте массив из 5 элементов типа Double и заполните его значениями, являющимися удвоенным индексом элемента.
     println("Example Array 3")
     val exam3: DoubleArray = doubleArrayOf(1.1, 1.2, 1.3, 1.4, 1.5)
     println(exam3.joinToString())
+
 //    Создайте массив из 5 элементов типа Int. Используйте цикл, чтобы присвоить каждому элементу значение, равное его индексу, умноженному на 3.
     println("Example Array 4")
-    val exam4: Array<Int> = Array(5) { 0 }
-    for (i in 1..5) {
-        exam4[i - 1] = i * 3
+    val exam4: Array<Int> = Array(5){0}
+    for (i in 1..5){
+        exam4[i-1] = i * 3
     }
     println(exam4.joinToString())
+
 //Создайте массив из 3 nullable строк. Инициализируйте его одним null значением и двумя строками.
     println("Example Array 5")
     val exam5: Array<String?> = arrayOf(null, "Qwerty", "asdfg")
     println(exam5.joinToString())
+
 //Создайте массив целых чисел и скопируйте его в новый массив в цикле.
     println("Example Array 6")
     val exam6: Array<Int> = arrayOf(10, 20, 30, 40)
-    val examp6: Array<Int> = Array(exam6.size) { 0 }
-    for (i in 0..3) {
+    val examp6: Array<Int> = Array (exam6.size) {0}
+    for (i in 0..3){
         examp6[i] = exam6[i]
     }
     println(exam6.joinToString())
     println(examp6.joinToString())
+
 //Создайте два массива целых чисел одинаковой длины. Создайте третий массив, вычев значения одного из другого. Распечатайте полученные значения.
     println("Example Array 7")
     val exam7_1: Array<Int> = arrayOf(10, 20, 30, 40)
     val exam7_2: Array<Int> = arrayOf(9, 18, 27, 36)
-    val resultExam7: Array<Int> = Array(exam7_1.size) { 0 }
-    for (i in 0..3) {
+    val resultExam7: Array<Int> = Array(exam7_1.size){0}
+    for (i in 0..3){
         resultExam7[i] = exam7_1[i] - exam7_2[i]
     }
     println(resultExam7.joinToString())
+
 //Создайте массив целых чисел. Найдите индекс элемента со значением 5. Если значения 5 нет в массиве, печатаем -1.
 // Реши задачу через цикл while.
     println("Example Array 8")
     val exam8: Array<Int> = arrayOf(10, 20, 5, 40, 50)
     var index = -1
     var i = 0
-    while (i < exam8.size && index == -1) {
-        if (exam8[i] == 5) {
+    while (i < exam8.size && index == -1){
+        if (exam8[i] == 5){
             index = i
         }
         i += 1
     }
     println(index)
+
 //Создайте массив целых чисел. Используйте цикл для перебора массива и вывода каждого элемента в консоль.
 // Напротив каждого элемента должно быть написано “чётное” или “нечётное”.
     println("Example Array 9")
     val exam9: Array<Int> = arrayOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
-    for (i in 0..9) {
+    for (i in 0..9){
         val num = exam9[i]
-        if (num % 2 == 0) {
+        if (num % 2 == 0){
             println("$num - четное")
-        } else {
+        }
+        else {
             println("$num - нечетное")
         }
     }
+
 //Создай функцию, которая принимает массив строк и строку для поиска. Функция должна находить в массиве элемент,
 //в котором принятая строка является подстрокой (метод contains()). Распечатай найденный элемент.
     println("Example Array 10")
     val exam10: Array<String> = arrayOf("Kotlin", "Java", "Python", "Phrase 4")
-    fun findexam10(array: Array<String>, search: String) {
+    fun findexam10 (array: Array<String>, search: String){
         for (element in array) {
             if (element.contains(search)) {
                 println(element)
@@ -82,78 +92,88 @@ fun main() {
         }
         println("Элемент не найден")
     }
-    findexam10(exam10, "lin")
-    findexam10(exam10, "av")
-    findexam10(exam10, "no")
+    findexam10(exam10,"lin")
+    findexam10(exam10,"av")
+    findexam10(exam10,"no")
 
 //    Работа со списками List
     println("Example List 1")
 //    Создайте пустой неизменяемый список целых чисел.
     val exam11: List<Int> = emptyList()
     println(exam11)
+
     println("Example List 2")
 //    Создайте неизменяемый список строк, содержащий три элемента (например, "Hello", "World", "Kotlin").
     val exam12: List<String> = listOf("Hello", "World", "Kotlin")
     println(exam12)
+
     println("Example List 3")
 //    Создайте изменяемый список целых чисел и инициализируйте его значениями от 1 до 5.
     val exam13: MutableList<Int> = mutableListOf(1, 2, 3, 4, 5)
     println(exam13)
+
     println("Example List 4")
 //    Имея изменяемый список целых чисел, добавьте в него новые элементы (например, 6, 7, 8).
     exam13.add(6)
     exam13.add(7)
     exam13.add(8)
     println(exam13)
+
     println("Example List 5")
 //    Имея изменяемый список строк, удалите из него определенный элемент (например, "World").
     exam13.remove(2)
     exam13.removeAt(3)   //УТОЧНИТЬ!!!!! Почему и как обойти путоницу в удаление по индексу если перед им был удален элемент?
     println(exam13)
+
     println("Example List 6")
 //    Создайте список целых чисел и используйте цикл для вывода каждого элемента на экран.
     val exam14: List<Int> = listOf(12, 14, 15, 19, 44)
-    for (element in exam14) {
+    for (element in exam14){
         println(element)
     }
+
     println("Example List 7")
 //    Создайте список строк и получите из него второй элемент, используя его индекс.
     val exam15: List<String> = listOf("World", "Kotlin", "Phyton", "Java")
     val exam15_1: String = exam15[1]
     println(exam15_1)
+
     println("Example List 8")
 //    Имея изменяемый список чисел, измените значение элемента на определенной позиции (например, замените элемент с индексом 2 на новое значение).
     exam13[0] = 100
     println(exam13)
+
     println("Example List 9")
 //    Создайте два списка строк и объедините их в один новый список, содержащий элементы обоих списков. Реши задачу с помощью циклов.
     val exam16_1: List<String> = listOf("Макбук", "Компьютер", "Стол")
     val exam16_2: List<String> = listOf("Laptop", "Computer", "Table")
     val exam16_3: MutableList<String> = mutableListOf()
-    for (element in exam16_1) {
+    for(element in exam16_1){
         exam16_3.add(element)
     }
-    for (element in exam16_2) {
+    for(element in exam16_2){
         exam16_3.add(element)
     }
     println(exam16_3)
+
     println("Example List 10")
 //    Создайте список целых чисел и найдите в нем минимальный и максимальный элементы используя цикл.
     val exam17: List<Int> = listOf(25, 14, 60, 215, 1, 44)
     var min = exam17[0]
     var max = exam17[0]
-    for (element in exam17) {
+    for (element in exam17){
         if (element < min) min = element
         if (element > max) max = element
     }
     println("Min: $min")
     println("Max: $max")
+
     println("Example List 11")
 //    Имея список целых чисел, создайте новый список, содержащий только четные числа из исходного списка используя цикл.
     val exam18_1: List<Int> = listOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
     val exam18_2: MutableList<Int> = mutableListOf()
-    for (element in exam18_1) {
-        if (element % 2 == 0) {
+    for (element in exam18_1){
+        if (element % 2 == 0){
             exam18_2.add(element)
         }
     }
@@ -164,36 +184,42 @@ fun main() {
 //    Создайте пустое неизменяемое множество целых чисел.
     val exam19: Set<Int> = emptySet()
     println(exam19)
+
     println("Example Set 2")
 //    Создайте неизменяемое множество целых чисел, содержащее три различных элемента (например, 1, 2, 3).
     val exam20: Set<Int> = setOf(1, 2, 3)
     println(exam20)
+
     println("Example Set 3")
 //    Создайте изменяемое множество строк и инициализируйте его несколькими значениями (например, "Kotlin", "Java", "Scala").
     val exam21: MutableSet<String> = mutableSetOf("Kotlin", "Java", "Scala")
     println(exam21)
+
     println("Example Set 4")
 //    Имея изменяемое множество строк, добавьте в него новые элементы (например, "Swift", "Go").
     exam21.add("Swift")
     exam21.add("Go")
     println(exam21)
+
     println("Example Set 5")
 //    Имея изменяемое множество целых чисел, удалите из него определенный элемент (например, 2).
     val exam22: MutableSet<Int> = mutableSetOf(10, 15, 20, 25, 30, 35, 40)
     println(exam22)
     exam22.remove(35)
     println(exam22)
+
     println("Example Set 6")
 //    Создайте множество целых чисел и используйте цикл для вывода каждого элемента на экран.
     val exam23: Set<Int> = setOf(1, 2, 3, 4, 5)
-    for (element in exam23) {
+    for (element in exam23){
         println(element)
     }
+
     println("Example Set 7")
 //    Создай функцию, которая принимает множество строк (set) и строку и проверяет, есть ли в множестве указанная строка. Нужно распечатать булево значение true если строка есть.
 //    Реши задачу через цикл.
     val exam24: Set<String> = setOf("Kotlin", "Java", "Python")
-    fun findexam24(set: Set<String>, search: String) {
+    fun findexam24 (set: Set<String>, search: String){
         for (element in set) {
             if (element == search) {
                 println(true)
@@ -202,14 +228,15 @@ fun main() {
         }
         println(false)
     }
-    findexam24(exam24, "Kotlin")
-    findexam24(exam24, "Python")
-    findexam24(exam24, "C++")
+    findexam24(exam24,"Kotlin")
+    findexam24(exam24,"Python")
+    findexam24(exam24,"C++")
+
     println("Example Set 8")
 //    Создайте неизменяемое множество строк и конвертируйте его в изменяемый список строк с использованием цикла.
     val exam25_1: Set<String> = setOf("Java", "Python", "Kotlin")
     val exam25_2: MutableList<String> = mutableListOf()
-    for (phrase in exam25_1) {
+    for (phrase in exam25_1){
         exam25_2.add(phrase)
     }
     println(exam25_2)
