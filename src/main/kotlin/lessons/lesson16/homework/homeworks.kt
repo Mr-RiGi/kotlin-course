@@ -188,6 +188,7 @@ override fun toString(): String {
 //    3. Попробуй создать логгер и добавить в него сообщения разными способами. Проверь вывод в консоли.
 
 
+@Suppress("DIVISION_BY_ZERO")
 fun main() {
     for (animal in animals) {
         animal.makeSound()
